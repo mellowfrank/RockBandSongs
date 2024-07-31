@@ -1,42 +1,31 @@
 <head>
-<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="jquery.tablesorter.widgets.min.js"></script>
+	<meta charset="utf-8">
+	<title>Frank's Rock Band Setlist</title>
 
-<style>
-#songlist thead tr .headerSortUp {
-	background-image: url(up.gif);
-}
-#songlist thead tr .headerSortDown {
-	background-image: url(down.gif);
-}
-#songlist thead tr .header {
-   	background-repeat: no-repeat;
-	background-position: center right;
-    cursor: pointer;
-}
-#songlist tbody .odd { background-color: white; }
-#songlist tbody .even { background-color: silver; }
+	<!-- Demo styling -->
+	<link href="docs/css/jq.css" rel="stylesheet">
 
-#songlist .Wii-0 {
-    background: url('no.png') center no-repeat;
-    width: 30px;
-}
-#songlist .Wii-0 .value { display: none }
+	<!-- jQuery: required (tablesorter works with jQuery 1.2.3+) -->
+	<script src="docs/js/jquery-1.2.6.min.js"></script>
 
-#songlist .Wii-1 {
-    background: url('yes.png') center no-repeat;
-    width: 30px;
-}
-#songlist .Wii-1 .value { display: none }
-</style>
+	<!-- Pick a theme, load the plugin & initialize plugin -->
+	<link href="css/theme.default.css" rel="stylesheet">
+	<script src="js/jquery.tablesorter.min.js"></script>
+	<script src="js/jquery.tablesorter.widgets.min.js"></script>
+	<script>
+	$(function(){
+		$('table').tablesorter({
+			widgets        : ['zebra', 'columns'],
+			usNumberFormat : false,
+			sortReset      : true,
+			sortRestart    : true
+		});
+	});
+	</script>
 
-<script type="text/javascript">
-$(document).ready(function() { $("#songlist").tablesorter({widgets: ['zebra']}); } ); 
-</script>
 </head>
 
-<table id="songlist" class="tablesorter-blue tablesorter tablesorter2821bf0ee82b9" role="grid">
+<table id="songlist" class="tablesorter">
 <thead>
 <tr>
 	<th>Title</th>
