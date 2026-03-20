@@ -191,20 +191,11 @@ footer.note{
   display: flex;
 }
 
-/* Tablet / iPad portrait (≤768px): single column, wrapped text */
+/* Tablet / iPad portrait (≤1640px): single column, fixed-width text */
 @media (max-width: 1640px) {
   main.columns {
     column-count: 1;
     column-gap: 0;
-  }
-  .entry {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    flex-wrap: wrap;
-  }
-  .entry .dots {
-    display: none;
   }
   .section {
     margin: 0 0 12px 0;
